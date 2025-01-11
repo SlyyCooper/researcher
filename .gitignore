@@ -2,6 +2,7 @@
 .env
 .venv
 .envrc
+*digital-ocean-droplet-hosting.md
 
 #Ignore Virtual Env
 env/
