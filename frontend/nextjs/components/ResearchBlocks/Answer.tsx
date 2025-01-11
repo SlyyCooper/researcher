@@ -53,21 +53,11 @@ export default function Answer({ answer }: { answer: string }) {
               {answer ? (
                 <div className="markdown-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
               ) : (
-                <div className="flex w-full flex-col gap-2">
-                  <div className="h-6 w-full animate-pulse rounded-md bg-gray-300" />
-                  <div className="h-6 w-full animate-pulse rounded-md bg-gray-300" />
-                  <div className="h-6 w-full animate-pulse rounded-md bg-gray-300" />
-                  <div className="h-6 w-full animate-pulse rounded-md bg-gray-300" />
-                </div>
+                <p>No answer available.</p>
               )}
             </div>
           </div>
         </div>
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          toastOptions={{ duration: 2000 }}
-        />
       </div>
     );
-}
+  }

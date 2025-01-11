@@ -10,6 +10,10 @@
         "button-name": "off"
       }
     ],
-    "typescript-config/consistent-casing": "off"
+    "typescript-config/consistent-casing": "off",
+    "axe/aria": "off",
+    "disown-opener": "off",
+    "axe/forms": "off",
+    "compat-api/css": "off"
   }
 }

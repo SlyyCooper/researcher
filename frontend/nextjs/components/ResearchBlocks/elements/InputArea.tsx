@@ -34,6 +34,8 @@ const InputArea: FC<TInputAreaProps> = ({
   reset,
   isStopped,
 }) => {
+  const textareaRef = useRef< HTMLTextAreaElement | null >(null); // {{ edit_1 }}
+
   // Only show input if not stopped
   if (isStopped) {
     return null;
@@ -43,7 +45,6 @@ const InputArea: FC<TInputAreaProps> = ({
     ? "Any questions about this report?"
     : "What would you like to research next?";
 
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const resetHeight = () => {
     if (textareaRef.current) {
@@ -98,30 +99,20 @@ const InputArea: FC<TInputAreaProps> = ({
         text-[#1B1B16]/30 text-black outline-none focus-visible:ring-0 focus-visible:ring-offset-0 
         sm:text-xl min-h-[3em] resize-none"
         disabled={disabled}
-        value={promptValue}
-        required
-        rows={2}
         onKeyDown={handleKeyDown}
         onChange={handleTextareaChange}
+        value={promptValue}
       />
       <button
-        disabled={disabled}
         type="submit"
-        className="relative flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-[3px] bg-[linear-gradient(154deg,#1B1B16_23.37%,#565646_91.91%)] disabled:pointer-events-none disabled:opacity-75"
+        className="ml-2 flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 disabled:bg-gray-400"
+        disabled={disabled}
       >
-        {disabled && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <TypeAnimation />
-          </div>
-        )}
-
         <Image
-          unoptimized
-          src={"/img/arrow-narrow-right.svg"}
-          alt="search"
-          width={24}
-          height={24}
-          className={disabled ? "invisible" : ""}
+          src="/send.svg"
+          alt="send"
+          width={20}
+          height={20}
         />
       </button>
     </form>

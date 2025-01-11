@@ -81,6 +81,7 @@ export default function ResearchForm({
           onChange={onFormChange}
           className="form-control"
           required
+          title="Select report type"
         >
 
           <option value="multi_agents">Multi Agents Report</option>
@@ -103,6 +104,7 @@ export default function ResearchForm({
           onChange={onFormChange}
           className="form-control"
           required
+          title="Select report source"
         >
           <option value="web">The Internet</option>
           <option value="local">My Documents</option>

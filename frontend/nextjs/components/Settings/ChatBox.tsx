@@ -71,6 +71,7 @@ export default function ChatBox({ chatBoxSettings, setChatBoxSettings }: ChatBox
         <ResearchForm 
           chatBoxSettings={chatBoxSettings} 
           setChatBoxSettings={setChatBoxSettings}
+          defaultReportType="research_report"
         />
 
         {agentLogs?.length > 0 ? <AgentLogs agentLogs={agentLogs} /> : ''}

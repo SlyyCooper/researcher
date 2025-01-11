@@ -52,9 +52,8 @@ export const useWebSocket = (setOrderedData: React.Dispatch<React.SetStateAction
         const { report_type, report_source, tone } = chatBoxSettings;
         let data = "start " + JSON.stringify({ task: promptValue, report_type, report_source, tone, headers });
         newSocket.send(data);
-
         heartbeatInterval.current = window.setInterval(() => {
-          socket?.send('ping');
+          newSocket?.send('ping');
         }, 3000); // Send ping every 3 seconds
       };
 

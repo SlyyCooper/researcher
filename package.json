@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@types/vfile": "^3.0.2",
+    "vfile": "^6.0.3"
+  }
+}
